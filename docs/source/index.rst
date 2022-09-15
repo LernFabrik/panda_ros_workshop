@@ -7,6 +7,7 @@ Welcome to Franka Emika Panda with ROS's Worshop!
 ==================================================
 
 * :doc:`/_source/installation/installation`
+* :doc:`/_source/panda_setup/drivers`
 
 .. toctree::
    :maxdepth: 2
@@ -14,12 +15,13 @@ Welcome to Franka Emika Panda with ROS's Worshop!
    :caption: Contents:
 
    /_source/installation/installation
+   /_source/panda_setup/drivers
 
 
 
 Reference
 =========
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+* https://frankaemika.github.io/docs/index.html
+* https://github.com/ros-planning
+* https://ros-planning.github.io/moveit_tutorials/
