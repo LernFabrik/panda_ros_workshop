@@ -3,4 +3,4 @@
 	url = https://github.com/frankaemika/libfranka.git
 [submodule "franka_ros"]
 	path = franka_ros
-	url = https://github.com/frankaemika/franka_ros.git
+	url = https://github.com/LernFabrik/franka_ros.git
