@@ -11,11 +11,9 @@ controller_list:
       - panda_joint5
       - panda_joint6
       - panda_joint7
-  # - name: hand_controller
-  #   action_ns: follow_joint_trajectory
-  #   type: FollowJointTrajectory
+  # - name: franka_gripper
+  #   action_ns: gripper_action
+  #   type: GripperCommand
   #   default: True
   #   joints:
   #     - panda_finger_joint1
-
-  # For roslaunch franka_gazebo panda.launch controller:=position_joint_trajectory_controller
