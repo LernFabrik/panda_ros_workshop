@@ -22,6 +22,21 @@ vel_scaling =  .3
 home_position = [.25, 0, .5]
 home_orientation = [180, .0, -45]
 
+pre_pick = [.365, -0.136, .2]
+pick = [.365, -0.136, .140]
+pre_place = [0.463, 0.264, 0.2]
+place = [0.463, 0.264, 0.129]
+
+
+# Gripper
+gripper_open = GripperCommandGoal()
+gripper_open.command.position = 0.0212
+gripper_open.command.max_effort = 0
+
+gripper_close = GripperCommandGoal()
+gripper_close.command.position = 0.02
+gripper_close.command.max_effort = 10
+
 def set_pose(xyz = [0, 0, 0], q = [0, 0, 0]):
 	pose = Pose() 
 	pose.position.x = xyz[0]
@@ -44,37 +59,43 @@ def plan_and_execute(group, pose):
 def main():
     moveit_commander.roscpp_initialize(sys.argv)
 
+    #Setup robot arm planner
     group = moveit_commander.MoveGroupCommander("panda_arm")
     group.set_planning_pipeline_id('pilz_industrial_motion_planner')
     group.set_planner_id('PTP')
     group.set_max_velocity_scaling_factor(0.2)
     group.set_max_acceleration_scaling_factor(0.1)
 
+    #Gripper Client
+    gripper = actionlib.SimpleActionClient('franka_gripper/gripper_action', GripperCommandAction)
+    gripper.wait_for_server()
+
     plan_and_execute(group, set_pose(home_position, home_orientation))
+    group.set_planner_id('PTP')
+    plan_and_execute(group, set_pose(pre_pick, home_orientation))
+    gripper.send_goal(goal=gripper_open)
+    gripper.wait_for_result()
+    group.set_planner_id('LIN')
+    group.set_max_velocity_scaling_factor(0.05)
+    plan_and_execute(group, set_pose(pick, home_orientation))
+    gripper.send_goal(goal=gripper_close)
+    gripper.wait_for_result()
+    plan_and_execute(group, set_pose(pre_pick, home_orientation))
 
-    client = actionlib.SimpleActionClient('franka_gripper/gripper_action', GripperCommandAction)
-    client.wait_for_server()
-    grasp_cl = actionlib.SimpleActionClient('franka_gripper/grasp', GraspAction)
-    grasp_cl.wait_for_server()
+    group.set_planner_id('PTP')
+    group.set_max_velocity_scaling_factor(0.2)
 
-    print('Connected to gripper servers')
-    goal = GripperCommandGoal()
-    goal.command.position = 0.04
-    goal.command.max_effort = 10
+    plan_and_execute(group, set_pose(pre_place, home_orientation))
+    group.set_planner_id('LIN')
+    group.set_max_velocity_scaling_factor(0.05)
+    plan_and_execute(group, set_pose(place, home_orientation))
+    gripper.send_goal(goal=gripper_open)
+    gripper.wait_for_result()
+    plan_and_execute(group, set_pose(pre_place, home_orientation))
 
-    grasp_goal = GraspGoal()
-    grasp_goal.width = 0.02
-    grasp_goal.force = 10
-    grasp_goal.speed = 1
-
-    client.send_goal(goal=goal)
-    client.wait_for_result()
-
-    goal.command.position = 0.02
-    goal.command.max_effort = 10
-    client.send_goal(goal=goal)
-    client.wait_for_result()
-    # grasp_cl.send_goal(goal=grasp_goal)
+    group.set_planner_id('PTP')
+    group.set_max_velocity_scaling_factor(0.2)
+    plan_and_execute(group, set_pose(home_position, home_orientation))
 
 
 
