@@ -70,7 +70,7 @@ ENV USER_GID=${USER_GID}
 ENV USER_UID=${USER_UID}
 
 # Panda Packages
-RUN apt update && mkdir -p colcon_panda_ws/src && cd colcon_panda_ws && \
-    source ${ROS_ROOT}/setup.bash && \
-    git clone https://github.com/frankaemika/franka_ros2.git src/franka_ros2 && \
-    colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release 
+# RUN apt update && mkdir -p colcon_panda_ws/src && cd colcon_panda_ws && \
+#     source ${ROS_ROOT}/setup.bash && \
+#     git clone https://github.com/frankaemika/franka_ros2.git src/franka_ros2 && \
+#     colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release 
