@@ -3,6 +3,7 @@ Installation
 
 1. ROS Installation
 -------------------
+Link: http://wiki.ros.org/noetic/Installation/Ubuntu 
 
 2. Building a real-time Linux Kernel
 ------------------------------------
@@ -149,3 +150,14 @@ Now the real time kernel should be installed. Reboot the system and check the ne
 
     $ sudo reboot
     $ uname -a
+
+3. Docker Install
+-----------------
+Follow the instruction `here <https://docs.docker.com/engine/install/ubuntu/>`_ to install docker on Ubuntu OS. 
+And follow the bellow steps to complete the docker installation.
+
+.. code-block:: bash
+
+    sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+    sudo chmod +x /usr/local/bin/docker-compose
+    docker-compose --version
