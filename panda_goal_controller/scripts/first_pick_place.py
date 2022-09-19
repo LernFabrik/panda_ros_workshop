@@ -7,12 +7,8 @@ from multiprocessing.connection import wait
 import sys
 import rospy
 import moveit_commander
-from moveit_msgs.msg import MotionPlanRequest
-from pilz_robot_programming import *
-import tf2_ros
 from tf.transformations import quaternion_from_euler
 from geometry_msgs.msg import Pose
-from franka_gripper.msg import GraspGoal, GraspAction
 
 import actionlib
 from control_msgs.msg import GripperCommandAction, GripperCommandGoal
