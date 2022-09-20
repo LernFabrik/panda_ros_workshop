@@ -22,7 +22,7 @@ services:
             - /tmp/.X11-unix:/tmp/.X11-unix:ro
             - /dev/shm:/dev/shm
             - /dev/*:/dev/*
-            - ../../../franka_ros2:/home/admin/colcon_panda_ws/src/
+            - ../../../colcon_panda_ws:/home/admin/colcon_panda_ws/
         environment:
             - DISPLAY=$DISPLAY
             - NVIDIA_VISIBLE_DEVICES=all

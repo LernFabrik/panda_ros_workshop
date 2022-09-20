@@ -42,6 +42,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-colcon-common-extensions \
     && rm -rf /var/lib/apt/lists/*
 
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ros-foxy-moveit \
+    && rm -rf /var/lib/apt/lists/*
+
 # Final Steps
 ARG USERNAME=admin
 ARG USER_UID=1000
