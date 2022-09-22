@@ -107,8 +107,8 @@ https://github.com/ros-planning/panda_moveit_config/blob/noetic-devel/config/joi
             has_acceleration_limits: true
             max_acceleration: 5
 
-Additional Reference URDF Modifications
-----------------------------------------
+Additional reference to URDF modifications
+-------------------------------------------
 
-Panda with table and camera: https://github.com/LernFabrik/franka_ros/blob/665a846bf45f7a8111d8f020ca3d6a32dcc07bbc/franka_description/robots/panda/panda.urdf.xacro
-Change to gazebo launch: https://github.com/LernFabrik/franka_ros/blob/665a846bf45f7a8111d8f020ca3d6a32dcc07bbc/franka_gazebo/launch/panda.launch
+Panda with table and camera: `Link <https://github.com/LernFabrik/franka_ros/blob/665a846bf45f7a8111d8f020ca3d6a32dcc07bbc/franka_description/robots/panda/panda.urdf.xacro>`_.
+Change to gazebo launch: `Link <https://github.com/LernFabrik/franka_ros/blob/665a846bf45f7a8111d8f020ca3d6a32dcc07bbc/franka_gazebo/launch/panda.launch>`_

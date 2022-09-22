@@ -166,7 +166,7 @@ Go to Goal (Real Robot)
 
 Refere to `Getting Started <https://frankaemika.github.io/docs/getting_started.html>`_ for setting up your robot. ::
     
-    roslaunch franka_control f^Cnka_control.launch robot_ip:=172.16.0.2 load_gripper:=true robot:=panda
+    roslaunch franka_control franka_control.launch robot_ip:=172.16.0.2 load_gripper:=true robot:=panda
     roslaunch panda_moveit_config move_group.launch
 
 Create `go_to_goal.py` inside `panda_controllers` package.
