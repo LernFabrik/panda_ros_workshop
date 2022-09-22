@@ -4,3 +4,5 @@
 [submodule "franka_ros"]
 	path = franka_ros
 	url = https://github.com/LernFabrik/franka_ros.git
+[submodule "ar_track_alvar"]
+	url = https://github.com/ROSinTraining/ar_track_alvar.git

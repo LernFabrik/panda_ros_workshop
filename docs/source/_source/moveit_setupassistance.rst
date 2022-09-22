@@ -377,3 +377,4 @@ Additional Reading
 
 * See the `URDF and SRDF <https://ros-planning.github.io/moveit_tutorials/doc/urdf_srdf/urdf_srdf_tutorial.html>`_ page for more
   details on the components of the URDF and SRDF mentioned in this tutorial.
+  

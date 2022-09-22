@@ -10,6 +10,7 @@ Welcome to Franka Emika Panda with ROS's Worshop!
 * :doc:`/_source/panda_setup/drivers`
 * :doc:`/_source/moveit_setupassistance`
 * :doc:`/_source/moveit_commander`
+* :doc:`/_source/additional_setting`
 
 .. toctree::
    :maxdepth: 2
@@ -20,6 +21,7 @@ Welcome to Franka Emika Panda with ROS's Worshop!
    /_source/panda_setup/drivers
    /_source/moveit_setupassistance
    /_source/moveit_commander
+   /_source/additional_setting
 
 
 
