@@ -11,6 +11,7 @@ Welcome to Franka Emika Panda with ROS's Worshop!
 * :doc:`/_source/moveit_setupassistance`
 * :doc:`/_source/moveit_commander`
 * :doc:`/_source/additional_setting`
+* :doc:`/_source/robot_task`
 
 .. toctree::
    :maxdepth: 2
@@ -22,6 +23,7 @@ Welcome to Franka Emika Panda with ROS's Worshop!
    /_source/moveit_setupassistance
    /_source/moveit_commander
    /_source/additional_setting
+   /_source/robot_task
 
 
 
