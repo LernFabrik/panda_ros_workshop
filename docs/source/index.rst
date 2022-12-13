@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Franka Emika Panda with ROS's Worshop!
+Welcome to Franka Emika Panda with ROS's Workshop!
 ==================================================
 
 * :doc:`/_source/installation/installation`
